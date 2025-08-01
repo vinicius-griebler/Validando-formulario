@@ -1,39 +1,24 @@
-document.querySelector('.formulario').addEventListener('submit', function (event) {
+const camposFormulario = document.querySelectorAll('.campo')
+const botaoEnviar = document.querySelector('.enviar')
 
-    event.preventDefault();
+botaoEnviar.addEventListener('click', (e) => {
+  e.preventDefault()
 
-    const campos = document.querySelectorAll('.campo');
-
-    let formularioValido = true;
-
-    campos.forEach(campo => {
-
-        const input = campo.querySelector('input');
-
-
-        const spanErro = campo.querySelector('.erro');
-
-
-        if (input.value.trim() === '') {
-            input.classList.add('erro-input');
-
-
-            spanErro.textContent = 'Campo obrigatório';
-            spanErro.style.display = 'block';
-
-
-            formularioValido = false;
-        } else {
-            input.classList.remove('erro-input');
-            input.classList.add('true-input');
-
-
-            spanErro.textContent = '';
-            spanErro.style.display = 'none';
-        }
-    });
-
-    if (formularioValido) {
-        alert('Formulário enviado com sucesso!');
+  camposFormulario.forEach((input) => {
+    if (input.value) {
+      input.classList.add('campo-preenchido')
+      input.nextElementSibling.classList.remove('mostrar-erro')
+    } else {
+      input.classList.remove('campo-preenchido')
+      input.classList.add('campo-obrigatorio')
+      input.nextElementSibling.classList.add('mostrar-erro')
     }
-});
+  })
+})
+
+// Lógida do Script:
+// Criar uma classe pra todos os inputs. [OK]
+// A prtir disso, criar um único array para eles [OK]
+// Percorrrer esse array todo verificando qual tá preenchido e qual não tá [OK]
+// - Quando preenchido, adiciona uma classe de borda verde [OK]
+// - Quando não preenchido, adiciona uma classe de borda vermelha + texto: 'campo obrigatório *' [OK]

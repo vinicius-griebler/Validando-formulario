@@ -1,56 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Validando Formulário</title>
     <link rel="stylesheet" href="src/css/reset.css">
     <link rel="stylesheet" href="src/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="src/css/responsividade.css">
+    <title>Quest - JS Intermediário</title>
 </head>
 
 <body>
-    <main class="container">
-        <section class="descricao">
-            <h1 class="titulo">FICOU COM DÚVIDA?<br>
-                NOS MANDE UMA MENSAGEM!</h1>
-            <p class="texto">caso tenha ficado com qualquer dúvida basta nos mandar uma mensagem e entraremos em contato
-                em menos de 24h.</p>
-        </section>
+    <main>
+        <div class="container">
+            <h1>FICOU COM DÚVIDA? <br>NOS MANDE UMA MENSAGEM!</h1>
+            <p>caso tenha ficado com qualquer dúvida basta nos mandar uma mensagem e entraremos em contato em menos de
+                24h.</p>
+        </div>
 
-        <form class="formulario" action="#" method="post" novalidate>
-            <div class="campo">
-                <input class="input" type="text" name="nome" id="nome" placeholder="Nome completo *">
-                <span class="erro"></span>
-            </div>
+        <form class="form">
+            <label for="nome"></label>
+            <input type="text" name="nome" id="nome" placeholder="Nome completo *" class="campo">
+            <p class="mensagem-alerta">campo obrigatório*</p>
 
-            <div class="campo">
-                <input class="input" type="text" name="email" id="email" placeholder="Email *">
-                <span class="erro"></span>
-            </div>
+            <label for="email"></label>
+            <input type="email" name="email" id="email" placeholder="Email *" class="campo">
+            <p class="mensagem-alerta">campo obrigatório*</p>
 
-            <div class="campo">
-                <input class="input" type="text" name="telefone" id="telefone" placeholder="Telefone *">
-                <span class="erro"></span>
-            </div>
+            <label for="telefone"></label>
+            <input type="number" name="number" id="telefone" placeholder="Telefone *" class="campo">
+            <p class="mensagem-alerta">campo obrigatório*</p>
 
-            <div class="campo">
-                <input class="mensagem-texto" type="text" name="mensagem" id="mensagem" placeholder="Mensagem *">
-                <span class="erro"></span>
-            </div>
+            <label for="mensagem"></label>
+            <textarea name="mensagem" id="mensagem" cols="30" rows="5" placeholder="Mensagem *"
+                class="campo"></textarea>
+            <p class="mensagem-alerta">campo obrigatório*</p>
 
-            <p>*campos obrigatórios</p>
+            <p class="instrucao">*campos obrigatórios</p>
 
-            <button class="botao">Enviar</button>
+            <button type="submit" class="enviar">Enviar</button>
         </form>
     </main>
 
     <script src="src/js/form.js"></script>
-
 </body>
 
 </html>

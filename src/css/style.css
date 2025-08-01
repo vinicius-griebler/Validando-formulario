@@ -1,99 +1,99 @@
-body { 
-    background-image: url("../images/img.background.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 100vh;
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    max-width: 800px;
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('../images/img.background.png') center center repeat-x;
+  background-size: cover; 
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
-    display: flex;
+  max-width: 320px;
+  color: white;
+  margin: 50px;
 }
 
-.descricao {
-    max-width: 300px;
-    height: 111px;
-    margin-left: 50px;
-    display: flex;
-    flex-direction: column;
-    top: 50%;
-    margin-top: 146px; 
+.container h1 {
+  font-size: 20px;
+  margin-bottom: 20px;
 }
 
-.descricao .titulo {
-    font-size: 20px;
-    font-weight: 900;
-    margin-bottom: 11px;
-    color: #ffffff;
+form {
+  max-width: 340px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 20px;
 }
 
-.descricao .texto {
-    font-size: 15px;
-    font-weight: 400;
-    color: #ffffff;
+input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin: 7px 0;
 }
 
-.formulario {
-    background-color: white;
-    width: 340px;
-    max-height: 378px;
-    margin-left: 60px;
-    padding: 20px;
-    margin-top: 12px;
-    flex-direction: column;
+input::placeholder {
+  color: #A8A8A8;
+  font-size: 15px;
 }
 
-input { 
-    margin-bottom: 15px;
-    width: 298px;
-    height: 35px;
-    padding-left: 5px;
-    border-radius: 5px;
-    border: 1px solid black;
+textarea::placeholder {
+  color: #A8A8A8;
+  font-size: 15px;
 }
 
-.formulario .mensagem-texto {
-    width: 298px;
-    height: 100px;
-    padding-bottom: 65px;
+textarea {
+  font-size: 0.9rem;
+  font-family: 'Roboto', sans-serif;
+  padding: 10px;
+  margin: 7px 0;
+  border-radius: 5px;
+  border: 1px solid black;
+  resize: none;
+  /* BORDINHA MÓVEL DO TEXTAREA */
 }
 
-.botao {
-    width: 298px;
-    height: 41px;
-    font-size: 15px;
-    background-color: #3CCC87;
-    color: #ffffff;
-    border-radius: 5px;
-    border: 1px;
-    margin-bottom: 21px;
+.instrucao {
+  margin-top: 10px;
+  margin-bottom: -14px;
 }
 
-.formulario p {
-    font-weight: 400;
-    font-size: 15px;
-    margin-bottom: 15px;
-    margin-top: -8px;
+.enviar {
+  background-color: #3CCC87;
+  padding: 15px;
+  margin-top: 25px;
+  color: white;
+  font-size: 1rem;
+  font-weight: bolder;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 
-.input.erro-input,
-.mensagem-texto.erro-input {
-    border: 2px solid #F52E2E;
+/* CLASSES PARA MANIPULAÇÃO COM JS */
+.campo-obrigatorio {
+  border: 1px solid red;
 }
 
-span.erro {
-    color: #F52E2E;
-    font-size: 8px;
-    display: none;
-    margin-top: -18px;
-    margin-bottom: 10px;
-    font-weight: 400;
+.campo-preenchido {
+  border: 1px solid green;
 }
 
-.true-input {
-    border: 2px solid #00C22B;
+.mensagem-alerta {
+  color: red;
+  font-size: 9px;
+  margin-top: -7px;
+  visibility: hidden;
 }
 
+.mostrar-erro {
+  visibility: visible;
+}
